@@ -1,0 +1,11 @@
+<script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('https://www.zerocho.com/api/get')  // get방식으로 한다. 
+    .then((result)=>{
+        console.log(result);
+        console.log(result.date);
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
+</script>
