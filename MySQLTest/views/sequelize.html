@@ -31,12 +31,12 @@
       </tr>
       </thead>
       <tbody>
-        {% for user in users %}
+        {% for user in users %}  <!-- for문으로 users만큼 뺀다.-->
         <tr>
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.age}}</td>
-          <td>{{ '기혼' if user.married else '미혼'}}</td>
+          <td>{{ '기혼' if user.married else '미혼'}}</td>  <!--만약 메리드면 기혼이고, 아니면 미혼을 나올거야야-->
         </tr>
         {% endfor %}
       </tbody>
@@ -53,7 +53,7 @@
       </form>
     </div>
     <br>
-    <table id="comment-list">
+    <table id="comment-list">  <!--댓글 리스트트-->
       <thead>
       <tr>
         <th>아이디</th>
