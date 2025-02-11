@@ -1,5 +1,6 @@
 const express = require('express');
-const {renderProfile, renderJoin,renderMain} = require('../controllers/page');
+const {isLoggedIn, isNotLoggedIn }= require('../middlewares');
+const {renderProfile, renderJoin,renderMain,renderHashtag,} = require('../controllers/page');
 
 const router = express.Router();
 
@@ -11,10 +12,11 @@ router.use((req,res,next)=>{
     next();
 });
 
-// router.get('/profile',isLoggedIn,renderProfile);
+router.get('/profile',isLoggedIn,renderProfile);
 
-// router.get('/join',isNotLoggedIn,renderJoin);
+router.get('/join',isNotLoggedIn,renderJoin);
 router.get('/',renderMain);
+router.get('/hashtag',renderHashtag);
 
 
 
